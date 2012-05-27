@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Inimesed</title>
+<meta name="Author" content="Kaarel Kaljurand"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel='stylesheet' type='text/css' href='css/main.css'/>
+</head>
+
+<body>
+
+<div class="intro">
+<b>Inimesed</b> is a simple app that lets you search and pick a contact
+from your address book.
+<b>Inimesed</b> is not a general purpose contact manager that could 
+replace the device's existing contact manager, e.g. one cannot edit the
+contacts list using <b>Inimesed</b>.
+The focus of <b>Inimesed</b> is solely on search,
+making the contact picking action as fast and hands-free as possible. To
+that end the app employs <b>search-by-voice</b>.
+</div>
+
+<h2>Usage</h2>
+
+<p><b>Inimesed</b> can be launched by tapping its launcher icon. Once launched
+the list of names in your address book is shown together with information
+on when and how much they have been contacted, etc. This list is sortable by
+various parameters.</p>
+
+<p>You can select a name in two
+ways, either by scrolling to it and then tapping on it, or (often faster)
+by holding your finger on the microphone button and uttering a voice command.
+Once the name is selected an action is performed. The actions are</p>
+
+<dl>
+<dt>CALL</dt>
+<dd>dial the default number and hit the call button</dd>
+
+<dt>DIAL</dt>
+<dd>just dial the default number</dd>
+
+<dt>VIEW</dt>
+<dd>launch the contact viewer (which lets you then choose a number to call,
+send an SMS, etc.)</dd>
+</dl>
+
+<p>If the name was selected by tapping, then the action depends on the
+corresponding setting which can be set via the <i>Settings</i>-menu.
+In case of a voice command the action depends on the command (see below).</p>
+
+<p><b>Inimesed</b> can be also launched from another app, if it calls a
+contact picker and <b>Inimesed</b> is proposed as one of the apps
+that can perform contact picking. In this case, in however way the contact
+is selected, its information is returned to the calling app which processes
+it further.</p>
+
+<h2>Voice commands</h2>
+
+<p>Searching the contact list by voice is simple: hold down the big yellow
+button and speak the name of the person whom you want to contact.</p>
+
+<p>The grammar of the commands is formally governed by the following BNF
+rules.</p>
+
+<pre>
+command := <i>NAME</i>
+command := (helista | vali) palun <i>NAME</i>
+</pre>
+
+<p>where <i>NAME</i> is the name of the contact as it appears in the
+contacts list. The current version of <b>Inimesed</b> only searches names
+that are written using the letters of the Estonian alphabet, e.g. if the
+name of the contact is written in a Greek or Thai script it will not be
+found.</p>
+
+<p>Some examples of legal utterances.</p>
+
+<pre>
+helista palun Jaan Jaanson
+vali palun Jaan Jaanson
+Jaan Jaanson
+</pre>
+
+
+<h2>Settings</h2>
+
+<p>Note that some settings require the app to be restarted, i.e. press
+BACK as long as you reach the home screen and then relaunch the app.</p>
+
+<dl>
+<dt>Confirm name by speech</dt>
+<dd>Synthesized voice will repeat the voice
+command. It tries to speak with an Estonian accent, if this fails then
+with Spanish, if this fails then with German, if this fails then with
+American English, and if this also fails then it will not say anything.</dd>
+
+<dt>People with phone</dt>
+<dd>Display and search only those contacts that have a phone number.</dd>
+
+<dt>Action when contact tapped</dt>
+<dd>Lets you specify the action that is performed when the contact
+is selected by tapping on the corresponding contact list item.</dd>
+
+<dt>Confidence level</dt>
+<dd>Confidence level that is required to perform the action. In noisy
+environments the recognizer often makes mistakes but also has lower
+confidence (e.g. &lt;-3). Setting the confidence level lower makes
+sure that commands are not carried out if the recognizer is unsure whether
+it understood them correctly.</dd>
+</dl>
+
+<h2>Permissions</h2>
+
+<p>The app requires the following permissions to run.</p>
+
+<dl>
+<dt>WRITE_EXTERNAL_STORAGE</dt>
+<dd>The app stores the acoustic models and grammars on the device's
+external storage, into the directory
+<code>Android/data/ee.ioc.phon.android.inimesed</code>. This
+directory does not store any permanent data, it just has to exist while
+the app is running. You can thus delete it anytime, it will be recreated
+the next time the app runs.</dd>
+
+<dt>RECORD_AUDIO</dt>
+<dd>The app needs access to the microphone
+to record the audio to be transcribed. The audio recording is on only
+while the finger touches the microphone button.</dd>
+
+<dt>READ_CONTACTS</dt>
+<dd>In order to display the list of contacts and to generate a speech
+recognition grammar based on
+the names of the contacts the app needs to access the address book.</dd>
+
+<dt>CALL_PHONE</dt>
+<dd>The app can directly call a phone number. It only does this when you
+issue the respective command.</dd>
+</dl>
+
+<p>Because the app cannot use the internet, your private address book
+can never leave the device. Note however that the grammar file which contains
+the names of your contacts (just the names, not phone numbers nor
+any other info)
+is stored on external storage while the app is running,
+so it is technically accessible to all other apps on the phone.</p>
+
+<h2>Tips</h2>
+
+<p>The current version of <b>Inimesed</b> uses Estonian acoustic models and
+an Estonian pronunciation dictionary. So try to pronounce the names in your
+best Estonian accent. For example, if you want to find a James, pronounce his
+name as <code>/J A M E S/</code> not <code>/JH EY M Z/</code>. Note also that
+the spoken feedback is not an indication of correct pronunciation, as the
+feedback language most likely differs from Estonian (i.e. Estonian
+speech synthesis is not yet available on Android).</p>
+
+
+<h2>Resources</h2>
+
+<p>The built-in speech recognizer is based on PocketSphinx by the
+<a href="http://cmusphinx.sourceforge.net/">CMU Sphinx project</a>.
+Note that since the recognizer is built-in, the app can be used
+without an internet connection and its performance depends only
+on the performance of the device. On slower devices (single core
+with less than 1GHz), the app might be too slow to be usable.</p>
+
+<p>The Estonian acoustic models have been created by the
+<a href="http://www.phon.ioc.ee/">Laboratory of Phonetics and Speech
+Technology, Institute of Cybernetics at Tallinn University of
+Technology</a> and are available at
+<a href="https://github.com/alumae/et-pocketsphinx-tutorial">github.com/alumae/et-pocketsphinx-tutorial</a>. Note that the models that are pre-installed
+with the app have been optimized for short loading and recognition
+time rather than high quality recognition. On Samsung Galaxy S2
+the app starts up in a couple of seconds and the transcription is
+delivered almost instantly.</p>
+
+<!-- If you experience low quality transcription
+but have a fast device (e.g. Galaxy S3) then you can consider installing
+slower but higher quality models.
+-->
+
+<p>The source code of the app will be made available at
+<a href="http://kaljurand.github.com/Inimesed/">http://kaljurand.github.com/Inimesed/</a>.</p>
+
+<address>
+Author:
+<a href="https://profiles.google.com/kaljurand">Kaarel Kaljurand</a>
+</address>
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+.image { margin: .5em .5em .5em .5em; }
+.warning { margin-left: 1em; margin-right: 1em; border-top: red 1px solid;
+border-bottom: red 1px solid; padding: .5em .5em .5em .5em }
+.wip { border: red 2px dashed; padding: .5em .5em .5em .5em }
+.intro { border: 1px dotted silver; padding: .5em .5em .5em .5em; background-color: #ffe }
+.infobox { float: right; border: silver 2px solid;
+margin: 0.5em 0.5em 0.5em 0.5em; padding: 0.5em 0.5em 0.5em 0.5em;
+background-color: #ffe090 }
+h1, h2, h3, h4, h5, h6 { font-family: Optima, sans-serif;
+border-bottom: 1px solid silver }
+h2 { margin-top: 2em }
+tbody tr:nth-child(even) td { background-color: #eff1f3 }
+td { border: 1px solid black; padding: 0.3em 0.3em 0.3em 0.3em }
+thead { font-weight: bold; background-color: silver; font-variant: small-caps }
+td { vertical-align: top }
+dt { font-weight: bold }
+pre { padding: 0.2em 0.2em 0.2em 0.2em; background-color: #eee;
+border: 1px solid silver }
+table { font-size: 80%; empty-cells: show; border-collapse: collapse;
+margin-left: 1em }
+address { border-top: 1px solid black; padding-top: 0.4em }
+body { font-family: Verdana, Arial, sans-serif }
