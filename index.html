@@ -4,7 +4,7 @@
   <head>
     <meta charset='utf-8' />
     <meta http-equiv="X-UA-Compatible" content="chrome=1" />
-    <meta name="description" content="Inimesed : Android app that lets you search your contacts by voice. Internet not required. Based on PocketSphinx. Uses Estonian acoustic models." />
+    <meta name="description" content="Inimesed : An Android app that lets you search your contacts by voice. Internet not required. Based on Pocketsphinx. Uses Estonian acoustic models." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css"/>
 
@@ -18,8 +18,8 @@
         <header class="inner">
           <a id="forkme_banner" href="https://github.com/Kaljurand/Inimesed">View on GitHub</a>
 
-          <h1 id="project_title">Inimesed</h1>
-          <h2 id="project_tagline">Android app that lets you search your contacts by voice. Internet not required. Based on PocketSphinx. Uses Estonian acoustic models.</h2>
+          <h1 id="project_title"><img class="logo" src="images/ic_launcher.png"/>Inimesed</h1>
+          <h2 id="project_tagline">An Android app that lets you search your contacts by voice. Internet not required. Based on Pocketsphinx. Uses Estonian acoustic models.</h2>
         </header>
     </div>
 
@@ -29,8 +29,12 @@
         <p><strong>Inimesed</strong> is a simple app that lets you search and pick a contact from your address book.
 The focus of <strong>Inimesed</strong> is solely on search, making the contact picking action as fast and hands-free as possible. To that end the app employs search-by-voice.</p>
 
-		<section><header><h3>Download</h3></header>
-		<p>... from <a href="https://github.com/Kaljurand/Inimesed/downloads">here</a>.</p>
+		<section><header><h3>Availability</h3></header>
+		<ul>
+		<li>All the released versions are downloadable from <a href="https://github.com/Kaljurand/Inimesed/downloads">here</a>.</li>
+		<li>[coming soon] Google Play link</li>
+		<li>[coming soon] source code</li>
+		</ul>
 		</section>
 
 		<section><header><h3>Documentation</h3></header>
@@ -43,30 +47,42 @@ The focus of <strong>Inimesed</strong> is solely on search, making the contact p
 		<table class="layout">
 <tr>
 <td>
-		<img src="screenshots/state0.png"/>
+		<img class="screenshot" src="screenshots/state0.png"/>
 </td>
 <td>
-		<img src="screenshots/state1.png"/>
+		<img class="screenshot" src="screenshots/state1.png"/>
 </td>
 </tr>
 <tr>
 <td>
-		<img src="screenshots/menu.png"/>
+		<img class="screenshot" src="screenshots/menu.png"/>
 </td>
 <td>
-		<img src="screenshots/settings.png"/>
+		<img class="screenshot" src="screenshots/settings.png"/>
 </td>
 </tr>
 		</table>
 		</section>
+		<section><header><h3>Used resources</h3></header>
+<p>The built-in speech recognizer is based on Pocketsphinx by the
+<a href="http://cmusphinx.sourceforge.net/">CMU Sphinx project</a>,
+specifically its Android port, see
+<a href="http://cmusphinx.sourceforge.net/2011/05/building-pocketsphinx-on-android/">Building Pocketsphinx On Android</a>.
+</p>
+
+<p>The Estonian acoustic models have been created by the
+<a href="http://www.phon.ioc.ee/">Laboratory of Phonetics and Speech
+Technology, Institute of Cybernetics at Tallinn University of
+Technology</a> and are available at
+<a href="https://github.com/alumae/et-pocketsphinx-tutorial">github.com/alumae/et-pocketsphinx-tutorial</a>.</p>
+		</section>
       </section>
     </div>
 
-    <!-- FOOTER  -->
+    <!-- FOOTER -->
     <div id="footer_wrap" class="outer">
       <footer class="inner">
-        <p class="copyright">Inimesed maintained by <a href="https://github.com/Kaljurand">Kaljurand</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+        <p class="copyright">Inimesed maintained by <a href="https://github.com/Kaljurand">Kaarel Kaljurand</a></p>
       </footer>
     </div>
 
