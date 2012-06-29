@@ -71,7 +71,11 @@ command := (helista | vali) palun <i>NAME</i>
 </pre>
 
 <p>where <i>NAME</i> is the name of the contact as it appears in the
-contacts list. The current version of <b>Inimesed</b> only searches names
+contacts list (so called <em>display name</em>). If the "Flexible search"
+option is switched on then any longer name component (e.g. the first name)
+can be used as <i>NAME</i>.</p>
+
+<p>The current version of <b>Inimesed</b> only searches names
 that are written using the letters of the Estonian alphabet, e.g. if the
 name of the contact is written in a Greek or Thai script it will not be
 found.</p>
@@ -87,18 +91,30 @@ Jaan Jaanson
 
 <h2>Settings</h2>
 
-<p>Note that some settings require the app to be restarted, i.e. press
-BACK as long as you reach the home screen and then relaunch the app.</p>
+<p>Note that some settings require the app to be restarted, i.e. exiting
+the app by pressing BACK as long as the home screen is reached
+and then relaunching the app.</p>
 
 <dl>
 <dt>Confirm name by speech</dt>
-<dd>Synthesized voice will repeat the voice
-command. It tries to speak with an Estonian accent, if this fails then
-with Spanish, if this fails then with German, if this fails then with
-American English, and if this also fails then it will not say anything.</dd>
+<dd>Synthesized (text-to-speech) voice will repeat the voice command.</dd>
+
+<dt>Confirmation language</dt>
+<dd>Language used in confirmation, choosable from a
+list of languages that are
+(1) available in the currently selected text-to-speech engine, and
+(2) similar to Estonian in terms to letter-to-sound mapping.</dd>
 
 <dt>People with phone</dt>
 <dd>Display and search only those contacts that have a phone number.</dd>
+
+<dt>Flexible search</dt>
+<dd>If "off" then the complete display name must be used in the
+voice command. Setting it "on" will allow searching also by first and last
+names, and other longer name components (short initials, titles, etc.
+must be dropped). Note that searching by the first name often makes the
+query ambiguous. Also app loading might take longer (as the grammar
+gets larger).</dd>
 
 <dt>Action when contact tapped</dt>
 <dd>Lets you specify the action that is performed when the contact
@@ -160,9 +176,9 @@ speech synthesis is not yet available on Android).</p>
 
 <h2>Resources</h2>
 
-<p>The built-in speech recognizer is based on PocketSphinx by the
+<p>The built-in speech recognizer is based on Pocketsphinx by the
 <a href="http://cmusphinx.sourceforge.net/">CMU Sphinx project</a>.
-Note that since the recognizer is built-in, the app can be used
+Because the recognizer is built-in, the app can be used
 without an internet connection and its performance depends only
 on the performance of the device. On slower devices (single core
 with less than 1GHz), the app might be too slow to be usable.</p>
@@ -174,6 +190,7 @@ Technology</a> and are available at
 <a href="https://github.com/alumae/et-pocketsphinx-tutorial">github.com/alumae/et-pocketsphinx-tutorial</a>. Note that the models that are pre-installed
 with the app have been optimized for short loading and recognition
 time rather than high quality recognition. On Samsung Galaxy S2
+with 200 entries in the address book
 the app starts up in a couple of seconds and the transcription is
 delivered almost instantly.</p>
 
