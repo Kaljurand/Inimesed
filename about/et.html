@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<title>Inimesed</title>
+<meta name="Author" content="Kaarel Kaljurand"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<link rel='stylesheet' type='text/css' href='css/main.css'/>
+</head>
+
+<body>
+
+<div class="intro">
+<b>Inimesed</b> on lihtne rakendus, mille abil saab kiiresti üles leida
+aadressiraamatus sisalduvaid nimesid.
+Rakendus võimaldab ainult otsimist. Aadressiraamatu kirje muutmiseks või
+leitud inimesele helistamiseks saab kasutada mobiilseadmes juba olemasolevaid
+vastavaid rakendusi.
+<b>Inimesed</b> püüab otsimise teha kiireks ja mugavaks. Selleks võimaldab
+rakendus <b>kõne abil otsimist</b>.
+</div>
+
+<h2>Kasutamine</h2>
+
+<p><b>Inimesed</b> kuvab käivitamisel aadressiraamatu sisu, ning
+näitab iga inimese kohta erinevat infot (viimase kontakti aeg jms).
+Nimekirja saab erinevate parameetrite järgi sorteerida.</p>
+
+<p>Inimese kontaktandmete vaatamiseks või talle helistamiseks on kaks
+viisi: tavaline klikkimine nimel ning kõne põhjal nime otsimine. Inimese valimisel
+sooritatakse üks järgnevatest toimingutest:</p>
+
+<dl>
+<dt>Helista numbril</dt>
+<dd>alusta kõnet vastaval numbril</dd>
+
+<dt>Vali number</dt>
+<dd>vali number, aga kõnet ära alusta</dd>
+
+<dt>Vaata kontaktandmeid</dt>
+<dd>ava kontaktandmete vaatamise rakendus</dd>
+</dl>
+
+<p>Kui inimene valiti välja tavalisel viisil, siis sooritatakse <i>Seadetes</i>
+määratud toiming. Kõnekäsu puhul sõltub toiming vastavast käsust (vt allpool).</p>
+
+<h2>Kõnekäsud</h2>
+
+<p>Inimese valimiseks kõne abil tuleb hoida näppu suurel kollasel nupul ja
+öelda inimese nimi või käsk, nt</p>
+
+<pre>
+Jaan Jaanson
+helista palun Jaan Jaanson
+vali palun Jaan Jaanson
+</pre>
+
+<p>Nimi peab olema samal kujul kui ta on esitatud aadressiraamatus,
+kuid kirjavahemärke,
+numbreid ja mitte-eestikeelseid tähti ei tohi välja hääldada.
+Kui seadetes
+on sisse lülitatud "Paindlik otsing" siis saab otsida ka nime osade
+järgi (vt allpool).</p>
+
+<p>Käsu puhul on <i>palun</i> kohustuslik,
+st tegu on rohkem palvega ;).</p>
+
+
+<h2>Seaded</h2>
+
+<dl>
+<dt>Kinnita nimi</dt>
+<dd>Sünteesitud hääl kordab valitud inimese nime või täidetavat kõnekäsku.</dd>
+
+<dt>Kinnituse keel</dt>
+<dd>Keel, mille hääldusega kinnitus esitatakse. Loomulik on selleks
+määrata eesti keel, aga eesti keele kõnesüntesaatori puudumisel sobib
+ka soome või hispaania keel. Keelt saab valid süsteemselt määratud
+kõnesüntesaatori poolt toetatud keelte piires.</dd>
+
+<dt>Telefoniomanikud</dt>
+<dd>Kuva ainult need inimesed, kellel on aadressiraamatu andmetel
+telefoninumber.</dd>
+
+<dt>Paindlik otsing</dt>
+<dd>Paindliku otsingu puhul ei pea teadma inimese nime täpset kirjutusviisi
+aadressiraamatus, sest
+otsida saab ka kirje osade (nt eesnimi, perekonnanimi) järgi.
+Lühemaid osasid (initsiaale ja tiitleid) ei tohiks küll välja hääldada.
+Paindlik otsing võib mõjuda halvasti rakenduse käivitamise kiirusele
+ning tuvastuse täpsusele. Samuti on tulemus mitmene (kui erinevatel inimestel
+on nt sama eesnimi).</dd>
+
+<dt>Toiming inimese valimisel</dt>
+<dd>määrab, milline toiming sooritatakse inimese vaimisel tavaviisil,
+st inimese nimele klikates.</dd>
+
+<dt>Enesekindlus</dt>
+<dd>Mürases keskkonnas võib kõnetuvastaja tagastada tulemuse, milles ta eriti
+kindel pole. Madalam (st rohkem negatiivsem) enesekindluse lävi võimaldab
+vähem kindlale tuvastusel mitte reageerida, sellisel juhul vastavat käsku ei
+täideta.</dd>
+</dl>
+
+<p>Oluline: enamiku seadete muutmise korral tuleb rakendus taaskäivitada,
+st rakendusest tuleb väljuda BACK-nuppu vajutades ning seejärel rakendus uuesti
+käivitada.</p>
+
+<h2>Rakenduse tööks vajalikud õigused</h2>
+
+<p><b>Inimesed</b> vajab oma tööks järgmisi õigusi.</p>
+
+<dl>
+<dt>Välismällu kirjutamine (WRITE_EXTERNAL_STORAGE)</dt>
+<dd>Rakendus salvestab akustilised ning keele mudelid seadme välismällu,
+kataloogi
+<code>Android/data/ee.ioc.phon.android.inimesed</code>. Selle kataloogi
+sisu on vajalik ainult rakenduse töö ajal ja sinna ei salvestata pikemaajalist
+infot. Seega, selle kataloogi võib alati ära kustutada, rakendus loob selle
+vajadusel uuesti.</dd>
+
+<dt>Lindistaja kasutamine (RECORD_AUDIO)</dt>
+<dd>Rakendus peab kõne salvestamiseks kasutama mikrofoni, kuid salvestamine
+toimub ainult siis, kui mikrofoni nupp on alla vajutatud.</dd>
+
+<dt>Aadressiraamatu lugemine (READ_CONTACTS)</dt>
+<dd>Keelemudeli loomiseks vajab rakendus ligipääsu aadressiraamatule.
+Rakendus aadressiraamatut muuta ei saa.</dd>
+
+<dt>Telefoninumbritele otse helistamine (CALL_PHONE)</dt>
+<dd>See õigus võimaldab rakendusel kasutaja vahenduseta telefoninumbritele
+heilstada. <b>Inimesed</b> teeb seda ainult vastava käsu puhul.</dd>
+</dl>
+
+<h2>Tips</h2>
+
+<p><b>Inimeste</b> praegune versioon kasutab eestikeelse kõne akustilisi mudeleid
+ning üsna lihtsat üksühest tähtede ja nende häälduse vastavust. Soovitud
+tuvastuse saamiseks tuleb seega nimesid hääldada nii "nagu nad on kirjutatud".
+Võõrkeelsete nimede hääldamisel tuleks vältida originaalkeelset hääldust:
+nt nimedes 'Irina' ja 'Fabio' oleks kindlam vältida pikki häälikuid ning
+'György' tuleks hääldada kui /gjörgj/.</p>
+
+
+<address>
+Autor:
+<a href="https://profiles.google.com/kaljurand">Kaarel Kaljurand</a>
+<br/>
+Rakenduse koduleht:
+<a href="http://kaljurand.github.com/Inimesed/">http://kaljurand.github.com/Inimesed/</a>
+</address>
+
+</body>
+</html>
