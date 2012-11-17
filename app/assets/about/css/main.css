@@ -1,0 +1,7 @@
+.intro { border-top: 1px solid silver; border-bottom: 1px solid silver; padding: .5em .5em .5em .5em; background-color: #ffe }
+h1, h2, h3 { font-family: sans-serif; border-bottom: 1px solid silver }
+h2 { margin-top: 2em }
+dt { font-weight: bold }
+pre { padding: 0.2em 0.2em 0.2em 0.2em; background-color: #eee; border: 1px solid silver }
+address { border-top: 1px solid silver; padding-top: 0.4em }
+body { font-family: sans-serif }

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="prefCurrentSortOrder" translatable="false">CurrentSortOrder</string>
+    <string name="prefVersionAcousticModel" translatable="false">VersionAcousticModel</string>
+    <string name="star" translatable="false">*</string>
+    <string name="keyUseTts" translatable="false">UseTts</string>
+    <string name="keyTtsLanguage" translatable="false">TtsLanguage</string>
+    <string name="keyActionContact" translatable="false">ActionContact</string>
+    <string name="keyShowHasPhoneNumber" translatable="false">ShowHasPhoneNumber</string>
+    <string name="keyConfidenceLevel" translatable="false">ConfidenceLevel</string>
+    <string name="keySearchByNameParts" translatable="false">SearchByNameParts</string>
+    <string name="defaultTtsLanguage" translatable="false">et</string>
+    <string name="defaultActionContact" translatable="false">android.intent.action.VIEW</string>
+
+    <!-- These are really integers, but Android does not support integers in preferences. :( -->
+    <string name="defaultConfidenceLevel" translatable="false">-4</string>
+
+    <string-array name="valuesConfidenceLevel" translatable="false">
+        <item>-1</item>
+        <item>-2</item>
+        <item>-3</item>
+        <item>-4</item>
+    </string-array>
+    <string-array name="entriesConfidenceLevel" translatable="false">
+        <item>-1</item>
+        <item>-2</item>
+        <item>-3</item>
+        <item>-4</item>
+    </string-array>
+    <string-array name="valuesActionContact" translatable="false">
+        <item>android.intent.action.CALL</item>
+        <item>android.intent.action.DIAL</item>
+        <item>android.intent.action.VIEW</item>
+    </string-array>
+
+    <!--
+    These action words go into the grammar/dictionary, they correspond
+    to the Android intents. They are also easily localizable.
+    -->
+    <string-array name="wordsActionContact" translatable="false">
+        <item>helista</item>
+        <item>vali</item>
+        <item>vaata</item>
+    </string-array>
+    <!--
+    These  words go into the grammar/dictionary, they correspond
+    phone number types available in the contacts content provider.
+    They are also easily localizable.
+    -->
+    <string-array name="wordsPhoneType" translatable="false">
+        <item>mobiil</item>
+        <item>kodus</item>
+        <item>tööl</item>
+    </string-array>
+    <!-- Other words -->
+    <string-array name="wordsOther" translatable="false">
+        <item>palun</item>
+    </string-array>
+
+    <!-- TTS languages to be tried, in the given order. -->
+    <string-array name="localesTts" translatable="false">
+        <item>et</item>
+        <item>fi</item>
+        <item>es</item>
+        <item>de</item>
+        <item>lv</item>
+        <item>hu</item>
+        <item>nl</item>
+        <item>pt_BR</item>
+        <item>en</item>
+    </string-array>
+
+    <string name="formatDate" translatable="false">yyyy-MM-dd (EEE) kk:mm</string>
+    <string name="labelApp" translatable="false">Inimesed</string>
+    <string name="fileAbout">file:///android_asset/about/en_US.html</string>
+    <string name="error">ERROR: %1$s</string>
+    <string name="errorActionNotSupported">ERROR: action not supported: %1$s</string>
+    <string name="errorTtsLangNotAvailable">TTS data for %1$s not available</string>
+    <string name="errorTtsInitError">TTS initialization failed</string>
+    <string name="buttonMicrophoneContentDescription">@string/tvInstructions</string>
+    <string name="iconContactContentDescription">Contact photo</string>
+    <string name="tvContacts">%1$d contacts, %2$d voice-searchable names</string>
+    <string name="tvInfo">%1$.2f seconds (%2$.2f x real-time), conf = %3$.2f</string>
+    <string name="tvInstructions">Hold down the button while speaking the name of the contact</string>
+    <string name="progressRecognizing">Transcribing speech input…</string>
+    <string name="progressUpdateAcousticData">Updating acoustic models on the SD card…</string>
+    <string name="progressUpdateGrammar">Updating grammars…</string>
+    <string name="progressLoadRecognizer">Initializing the speech recognizer…</string>
+    <string name="msgRecognitionError">Sorry, didn\'t understand :(</string>
+    <string name="msgNameNotFound">Not found: %1$s</string>
+    <string name="msgNameAmbiguous">Several results: %1$s</string>
+    <string name="menuMainSort">Sort by …</string>
+    <string name="menuMainSortByName">name</string>
+    <string name="menuMainSortByLastTimeContacted">last contacted</string>
+    <string name="menuMainSortByTimesContacted">most contacted</string>
+    <string name="menuMainSortByStarred">starred</string>
+    <string name="menuMainSettings">Settings</string>
+    <string name="menuMainAbout">About</string>
+    <string name="titleUseTts">Confirm name by speech</string>
+    <string name="summaryUseTts">Speak the recognized name as feedback before executing the command (requires the app to be relaunched)</string>
+    <string name="titleTtsLanguage">Confirmation language</string>
+    <string name="summaryTtsLanguage">Language that is used for the synthesized confirmation (requires the app to be relaunched)</string>
+    <string name="titleShowHasPhoneNumber">People with phone</string>
+    <string name="summaryShowHasPhoneNumber">Show only contacts that have at least one phone number listed (requires the app to be relaunched)</string>
+    <string name="titleSearchByNameParts">Flexible search</string>
+    <string name="summarySearchByNameParts">Search also by first and last names, which can result in lower precision and more ambiguous results (requires the app to be relaunched)</string>
+    <string name="labelPreferences">Preferences</string>
+    <string name="labelAbout">About</string>
+    <string name="titleActionContact">Action when contact tapped</string>
+    <string name="summaryActionContact">When the contact is selected, then launch \"%1$s\"</string>
+    <string name="titleConfidenceLevel">Confidence level</string>
+    <string name="summaryConfidenceLevel">Confidence level required to take action (the higher the more confident), currently %1$s</string>
+
+    <string-array name="entriesActionContact">
+        <item>Call number</item>
+        <item>Dial number</item>
+        <item>View contact</item>
+    </string-array>
+
+</resources>

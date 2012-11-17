@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <CheckBoxPreference
+        android:defaultValue="@bool/defaultUseTts"
+        android:key="@string/keyUseTts"
+        android:summary="@string/summaryUseTts"
+        android:title="@string/titleUseTts" />
+
+    <ListPreference
+        android:defaultValue="@string/defaultTtsLanguage"
+        android:dependency="@string/keyUseTts"
+        android:key="@string/keyTtsLanguage"
+        android:summary="@string/summaryTtsLanguage"
+        android:title="@string/titleTtsLanguage" />
+
+    <CheckBoxPreference
+        android:defaultValue="@bool/defaultShowHasPhoneNumber"
+        android:key="@string/keyShowHasPhoneNumber"
+        android:summary="@string/summaryShowHasPhoneNumber"
+        android:title="@string/titleShowHasPhoneNumber" />
+    <CheckBoxPreference
+        android:defaultValue="@bool/defaultSearchByNameParts"
+        android:key="@string/keySearchByNameParts"
+        android:summary="@string/summarySearchByNameParts"
+        android:title="@string/titleSearchByNameParts" />
+
+    <ListPreference
+        android:defaultValue="@string/defaultActionContact"
+        android:entries="@array/entriesActionContact"
+        android:entryValues="@array/valuesActionContact"
+        android:key="@string/keyActionContact"
+        android:summary="@string/summaryActionContact"
+        android:title="@string/titleActionContact" />
+    <ListPreference
+        android:defaultValue="@string/defaultConfidenceLevel"
+        android:entries="@array/entriesConfidenceLevel"
+        android:entryValues="@array/valuesConfidenceLevel"
+        android:key="@string/keyConfidenceLevel"
+        android:summary="@string/summaryConfidenceLevel"
+        android:title="@string/titleConfidenceLevel" />
+
+</PreferenceScreen>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="fileAbout">file:///android_asset/about/et.html</string>
+    <string name="error">VIGA: %1$s</string>
+    <string name="errorActionNotSupported">VIGA: toiming pole toetatud: %1$s</string>
+    <string name="errorTtsLangNotAvailable">Kõnesüntesaatori failid keele %1$s jaoks puuduvad</string>
+    <string name="errorTtsInitError">Kõnesüntesaatori alglaadimine luhtus</string>
+    <string name="buttonMicrophoneContentDescription">@string/tvInstructions</string>
+    <string name="iconContactContentDescription">Inimese pilt</string>
+    <string name="tvContacts">%1$d inimest, %2$d kõnega otsitavat nime</string>
+    <string name="tvInfo">%1$.2f sekundit (%2$.2f x reaalaeg), enesekindlus = %3$.2f</string>
+    <string name="tvInstructions">Hoidke nuppu all ja öelge inimese nimi</string>
+    <string name="progressRecognizing">Transkribeerin…</string>
+    <string name="progressUpdateAcousticData">Uuendan akustilisi mudeleid SD kaardil…</string>
+    <string name="progressUpdateGrammar">Uuendan grammatikat…</string>
+    <string name="progressLoadRecognizer">Käivitan kõnetuvastajat…</string>
+    <string name="msgRecognitionError">Vabandust, ei saanud aru :(</string>
+    <string name="msgNameNotFound">Nime ei leitud: %1$s</string>
+    <string name="msgNameAmbiguous">Mitu tulemust: %1$s</string>
+    <string name="menuMainSort">Järjesta … järgi</string>
+    <string name="menuMainSortByName">nime</string>
+    <string name="menuMainSortByLastTimeContacted">kontakteerumisaja</string>
+    <string name="menuMainSortByTimesContacted">sageduse</string>
+    <string name="menuMainSortByStarred">tärnide</string>
+    <string name="menuMainSettings">Seaded</string>
+    <string name="menuMainAbout">Abi</string>
+    <string name="titleUseTts">Kinnita nimi</string>
+    <string name="summaryUseTts">Korda nime ennem käsu täideviimist (vajalik rakenduse uuesti käivitamine)</string>
+    <string name="titleTtsLanguage">Kinnituse keel</string>
+    <string name="summaryTtsLanguage">Hääldus, mida kinnituses kasutatakse (vajalik rakenduse uuesti käivitamine)</string>
+    <string name="titleShowHasPhoneNumber">Telefoniomanikud</string>
+    <string name="summaryShowHasPhoneNumber">Näita ainult neid, kellel on vähemalt üks telefoninumber (vajalik rakenduse uuesti käivitamine)</string>
+    <string name="titleSearchByNameParts">Paindlik otsing</string>
+    <string name="summarySearchByNameParts">Otsi ka nime osade (nt eesnimi) põhjal. See vähendab kõnetuvastuse täpsust ja ühesust. (Vajalik rakenduse uuesti käivitamine.)</string>
+    <string name="labelPreferences">Seaded</string>
+    <string name="labelAbout">Abi</string>
+    <string name="titleActionContact">Toiming inimese valimisel</string>
+    <string name="summaryActionContact">Kui inimene valiti klikates, siis \"%1$s\"</string>
+    <string name="titleConfidenceLevel">Enesekindlus</string>
+    <string name="summaryConfidenceLevel">Käsu täitmiseks vajalik enesekindlus (kõrgem väärtus nõuab kõrgemat enesekindlust), praegu %1$s</string>
+
+    <string-array name="entriesActionContact">
+        <item>Helista numbril</item>
+        <item>Vali number</item>
+        <item>Vaata kontaktandmeid</item>
+    </string-array>
+
+</resources>

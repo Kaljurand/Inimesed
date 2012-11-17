@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:gravity="fill"
+    android:padding="6dp" >
+
+    <ImageView
+        android:id="@+id/contactIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginRight="5dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/iconContactContentDescription"
+        android:maxHeight="48dp"
+        android:maxWidth="48dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_launcher" />
+
+    <TextView
+        android:id="@+id/contactDisplayName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/contactIcon"
+        android:singleLine="true"
+        android:text="@string/progressRecognizing"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/contactStarred"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/contactDisplayName"
+        android:text="@string/star"
+        android:textColor="@color/yellow1"
+        android:textSize="20sp"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/contactLastTimeContacted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/contactDisplayName"
+        android:layout_toRightOf="@+id/contactIcon"
+        android:singleLine="true"
+        android:text="@string/formatDate"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/contactTimesContacted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/semi_transparent"
+        android:padding="2dp"
+        android:text="@integer/versionAcousticModel"
+        android:textSize="14sp" />
+
+</RelativeLayout>

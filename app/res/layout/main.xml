@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/lvContacts"
+        android:layout_width="fill_parent"
+        android:layout_height="0dip"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/llMicrophone"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="1dp"
+        android:background="@drawable/tiles"
+        android:orientation="vertical"
+        android:padding="2dp" >
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:textSize="@dimen/textsizeStatus" >
+        </TextView>
+
+        <ImageButton
+            android:id="@+id/buttonMicrophone"
+            android:layout_width="@dimen/widthMic"
+            android:layout_height="0dip"
+            android:layout_gravity="center"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_mic"
+            android:contentDescription="@string/buttonMicrophoneContentDescription"
+            android:gravity="center"
+            android:padding="@dimen/paddingMic"
+            android:src="@drawable/ic_btn_speak_now"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/tvInfo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/textsizeInfo" >
+        </TextView>
+    </LinearLayout>
+
+</LinearLayout>

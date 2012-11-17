@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--
+    This is a monotonically increasing natural number larger than 0 which
+    indicates the current version of the acoustic model that is packaged
+    in the assets. Whenever the files of the model are updated, this number
+    must be increased. The app compares this number with the one stored in the
+    user's settings to determine if the user's acoustic models need to be updated.
+    -->
+    <integer name="versionAcousticModel">4</integer>
+
+</resources>

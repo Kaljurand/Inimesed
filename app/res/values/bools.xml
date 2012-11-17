@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <bool name="defaultUseTts">true</bool>
+    <bool name="defaultShowHasPhoneNumber">true</bool>
+    <bool name="defaultSearchByNameParts">false</bool>
+
+</resources>

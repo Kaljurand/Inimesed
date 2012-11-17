@@ -1,2 +1,77 @@
 Inimesed
 ========
+
+Tags
+----
+
+Version tags are set by e.g.
+
+	git tag -a v0.8.18 -m 'version 0.8.18'
+
+The last number should be even.
+
+
+Lint
+----
+
+	lint --html report.html .
+
+
+PocketSphinx on Android
+-----------------------
+
+In order to successfully build:
+
+  - PocketSphinx libraries must be installed
+  - PocketSphinx source must be installed
+  - swig must be installed
+  - Android NDK must be installed (android-ndk-r8)
+  - Android SDK must be installed
+  - change `SPHINX_PATH` in `jni/Android.mk` to match your configuration
+
+Follow <http://cmusphinx.sourceforge.net/2011/05/building-pocketsphinx-on-android/>
+to get everything installed.
+
+Building for release
+--------------------
+
+Run these commands in the app-directory. You need to have the files:
+
+  - local.properties
+  - speak.keystore
+  - assets/hmm/ should contain the acoustic models (see: <https://github.com/alumae/et-pocketsphinx-tutorial/tree/master/models/hmm>)
+
+First time:
+
+	# Delete bin/ and gen/
+	ant clean
+
+	# This is needed only for the first time,
+	# and is run in jni-directory
+	cd jni/
+
+	# Create Java wrappers and pocketsphinx_wrap.c.
+	# They are already in the repository (generated using swig 2.0.4) so you do not
+	# necessarily need to run this.
+	# Note that swig 2.0.5+ breaks ndk_build. There is probably
+	# a simple solution to it but I haven't found it.
+	make swig_build
+
+	# Compile the c-files
+	make ndk_build
+
+	# Go back into the main directory
+	cd ..
+
+	# Compile and package everything for the release
+	# (asks for the release keys)
+	ant release
+
+	# Install
+	adb install -r bin/Inimesed-release.apk
+
+
+Next time:
+
+	ant clean release
+	adb install -r bin/Inimesed-release.apk

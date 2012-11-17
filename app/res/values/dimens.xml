@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="paddingMic">20dp</dimen>
+    <dimen name="widthMic">150dp</dimen>
+    <dimen name="textsizeInfo">12sp</dimen>
+    <dimen name="textsizeStatus">16sp</dimen>
+
+</resources>

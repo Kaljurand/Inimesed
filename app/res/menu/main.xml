@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menuMainSort"
+        android:icon="@drawable/ic_menu_sort_by_size"
+        android:title="@string/menuMainSort">
+        <menu>
+            <group android:checkableBehavior="single" >
+                <item
+                    android:id="@+id/menuMainSortByName"
+                    android:title="@string/menuMainSortByName"/>
+                <item
+                    android:id="@+id/menuMainSortByLastTimeContacted"
+                    android:title="@string/menuMainSortByLastTimeContacted"/>
+                <item
+                    android:id="@+id/menuMainSortByTimesContacted"
+                    android:title="@string/menuMainSortByTimesContacted"/>
+                <item
+                    android:id="@+id/menuMainSortByStarred"
+                    android:title="@string/menuMainSortByStarred"/>
+            </group>
+        </menu>
+    </item>
+    <item
+        android:id="@+id/menuMainSettings"
+        android:icon="@drawable/ic_menu_preferences"
+        android:title="@string/menuMainSettings"/>
+    <item
+        android:id="@+id/menuMainAbout"
+        android:icon="@drawable/ic_menu_help"
+        android:title="@string/menuMainAbout"/>
+
+</menu>

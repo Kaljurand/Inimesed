@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="transparent">#00000000</color>
+    <color name="very_transparent">#11404040</color>
+    <color name="semi_transparent">#ee404040</color>
+    <color name="grey2">#808080</color>
+    <color name="red">#cc0000</color>
+    <color name="blue">#0000cc</color>
+    <color name="yellow1">#ffbb33</color>
+    <color name="yellow2">#ff8800</color>
+    <color name="buttonStroke">#ee404040</color>
+    <color name="buttonNormal1">#ffcc00</color> <!-- top -->
+    <color name="buttonNormal2">#996600</color> <!-- bottom -->
+    <color name="buttonPressed1">#996600</color>
+    <color name="buttonPressed2">#ffcc00</color>
+    <color name="buttonFocused1">#ffcc00</color>
+    <color name="buttonFocused2">#ffcc00</color>
+
+</resources>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ee.ioc.phon.android.inimesed"
+    android:installLocation="auto"
+    android:versionCode="132"
+    android:versionName="0.1.32" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="10" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <!-- This seems to be required for the noise/echo/gain stuff. -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+
+    <!--
+    Google Play entails from the CALL_PHONE permission that we need to use telephony.
+    However, this feature is not essential for the app, so we mark it as required=false.
+    The goal is to make the app available also to tablets (that don't have telephony).
+    On 2012-07-19, Google Play shows: available for 1160 devices, not available for Nexus 7 (grouper).
+    On 2012-11-17: available for 1987 (incl. grouper) (required=false)
+    -->
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+
+    <application
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/labelApp"
+        android:theme="@style/BlackThemeSelector" >
+        <activity
+            android:name=".InimesedActivity"
+            android:label="@string/labelApp" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.PICK" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="vnd.android.cursor.dir/contact" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Preferences"
+            android:label="@string/labelPreferences" >
+        </activity>
+        <activity
+            android:name=".About"
+            android:label="@string/labelAbout" >
+        </activity>
+    </application>
+
+</manifest>
