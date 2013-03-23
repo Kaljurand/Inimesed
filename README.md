@@ -23,11 +23,12 @@ PocketSphinx on Android
 In order to successfully build:
 
   - PocketSphinx libraries must be installed
-  - PocketSphinx source must be installed
   - swig must be installed
-  - Android NDK must be installed (android-ndk-r8)
+  - Android NDK must be installed (tested with: android-ndk-r8e)
   - Android SDK must be installed
   - change `SPHINX_PATH` in `jni/Android.mk` to match your configuration
+    - pocketsphinx (PocketSphinx 0.7 / PocketSphinx v0.5.99)
+    - sphinxbase (Sphinxbase-0.7)
 
 Follow <http://cmusphinx.sourceforge.net/2011/05/building-pocketsphinx-on-android/>
 to get everything installed.
@@ -57,7 +58,8 @@ First time:
 	# a simple solution to it but I haven't found it.
 	make swig_build
 
-	# Compile the c-files
+	# Compile the c-files.
+	# First set an environment variable `ANDROID_NDK` to point to the Android NDK
 	make ndk_build
 
 	# Go back into the main directory
