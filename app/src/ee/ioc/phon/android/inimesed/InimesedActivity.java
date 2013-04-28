@@ -1,5 +1,5 @@
 /*
- * Copyright 2012, Institute of Cybernetics at Tallinn University of Technology
+ * Copyright 2012-2013, Institute of Cybernetics at Tallinn University of Technology
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -254,7 +254,8 @@ public class InimesedActivity extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event)  {
 		Log.i(LOG_TAG, "Key down: " + keyCode);
 		if (keyCode == KeyEvent.KEYCODE_HEADSETHOOK) {
-			actionDown();
+			if (! mListening) actionDown();
+			return true;
 		}
 		return super.onKeyDown(keyCode, event);
 	}
@@ -264,7 +265,8 @@ public class InimesedActivity extends Activity {
 	public boolean onKeyUp(int keyCode, KeyEvent event)  {
 		Log.i(LOG_TAG, "Key up: " + keyCode);
 		if (keyCode == KeyEvent.KEYCODE_HEADSETHOOK) {
-			actionUp();
+			if (mListening) actionUp();
+			return true;
 		}
 		return super.onKeyUp(keyCode, event);
 	}
