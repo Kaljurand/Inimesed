@@ -1,20 +1,12 @@
 Inimesed
 ========
 
-Tags
-----
+Inimesed is an Android app that lets you search your contacts by voice.
+Since it uses the Android port of the Pocketsphinx speech recognizer, it does not require an internet connection.
+The current version of Inimesed uses Estonian acoustic models.
 
-Version tags are set by e.g.
-
-	git tag -a v0.8.18 -m 'version 0.8.18'
-
-The last number should be even.
-
-
-Lint
-----
-
-	lint --html report.html .
+The [FAQ](https://github.com/Kaljurand/Inimesed/wiki/FAQ) tries to answer often occuring
+questions regarding porting Inimesed to other languages and use cases.
 
 
 PocketSphinx on Android
@@ -32,6 +24,7 @@ In order to successfully build:
 
 Follow <http://cmusphinx.sourceforge.net/2011/05/building-pocketsphinx-on-android/>
 to get everything installed.
+
 
 Building for release
 --------------------
@@ -77,3 +70,17 @@ Next time:
 
 	ant clean release
 	adb install -r bin/Inimesed-release.apk
+
+
+### Tags
+
+Version tags are set by e.g.
+
+	git tag -a v0.8.18 -m 'version 0.8.18'
+
+The last number should be even.
+
+
+### Lint
+
+	lint --html report.html .
