@@ -279,7 +279,7 @@ public class InimesedActivity extends Activity {
 					if (! success) {
 						// TODO: this message will not be shown very long,
 						// so the user will probably not notice it.
-						mTvInfo.setText(String.format(getString(R.string.errorTtsLangNotAvailable), selectedLanguage));
+						mTvInfo.setText(getString(R.string.errorTtsLangNotAvailable, selectedLanguage));
 					}
 				} else {
 					mTvInfo.setText(getString(R.string.errorTtsInitError));
@@ -329,7 +329,7 @@ public class InimesedActivity extends Activity {
 			Log.i(LOG_TAG, "Set TTS to locale: " + locale);
 			return true;
 		}
-		Log.e(LOG_TAG, String.format(getString(R.string.errorTtsLangNotAvailable), localeAsStr));
+		Log.e(LOG_TAG, getString(R.string.errorTtsLangNotAvailable, localeAsStr));
 		return false;
 	}
 
@@ -480,11 +480,11 @@ public class InimesedActivity extends Activity {
 
 		Set<Person> persons = cg.getPersons(name);
 		if (persons == null || persons.isEmpty()) {
-			mTvStatus.setText(String.format(getString(R.string.msgNameNotFound), name));
+			mTvStatus.setText(getString(R.string.msgNameNotFound, name));
 			return;
 		} else if (persons.size() > 1) {
 			String label = name.replaceAll(Persons.PHON_CONNECTOR, "·");
-			launchAmbiguityResolver(String.format(getString(R.string.msgNameAmbiguous), label), persons, actionType);
+			launchAmbiguityResolver(getString(R.string.msgNameAmbiguous, label), persons, actionType);
 			mTvStatus.setText("");
 			return;
 		}
@@ -539,7 +539,7 @@ public class InimesedActivity extends Activity {
 		if (activities.isEmpty()) {
 			String action = ActionType.convertIntentActionToActionType(intent.getAction()).toString();
 			mMessageHandler.sendMessage(createMessage(MSG_INFO,
-					String.format(getString(R.string.errorActionNotSupported), action, uri)));
+					getString(R.string.errorActionNotSupported, action, uri)));
 		} else {
 			Log.i(LOG_TAG, "Launching: " + actionType);
 			startActivity(intent);
@@ -598,7 +598,7 @@ public class InimesedActivity extends Activity {
 			if (mCg != null) {
 				voicesearchableContacts = mCg.getContactsSize();
 			}
-			setTitle(String.format(getString(R.string.tvContacts), mCursor.getCount(), voicesearchableContacts));
+			setTitle(getString(R.string.tvContacts, mCursor.getCount(), voicesearchableContacts));
 		}
 	}
 
@@ -680,7 +680,7 @@ public class InimesedActivity extends Activity {
 				publishProgress(getString(R.string.progressLoadRecognizer));
 				return new RecognizerTask(mDf);
 			} catch (IOException e) {
-				publishProgress(String.format(getString(R.string.error), e.getMessage()));
+				publishProgress(getString(R.string.error, e.getMessage()));
 				return null;
 			}
 		}
@@ -743,7 +743,7 @@ public class InimesedActivity extends Activity {
 								long nmsec = end_date.getTime() - mStartDate.getTime();
 								float rec_dur = (float)nmsec / 1000;
 								float confidence = getConfidence(bestScore, nmsec);
-								mTvInfo.setText(String.format(getString(R.string.tvInfo), mSpeechDur, rec_dur / mSpeechDur, confidence));
+								mTvInfo.setText(getString(R.string.tvInfo, mSpeechDur, rec_dur / mSpeechDur, confidence));
 								handleContactSelectedBySpeech(mCg, hyp, confidence);
 							}
 						});

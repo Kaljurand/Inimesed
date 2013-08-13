@@ -28,6 +28,7 @@
         android:required="false" />
 
     <application
+        android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/labelApp"
         android:theme="@style/BlackThemeSelector" >

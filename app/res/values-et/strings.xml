@@ -4,7 +4,7 @@
     <string name="fileAbout">file:///android_asset/about/et.html</string>
     <string name="error">VIGA: %1$s</string>
     <string name="errorActionNotSupported">VIGA: toiming pole toetatud: %1$s</string>
-    <string name="errorTtsLangNotAvailable">Kõnesüntesaatori failid keele %1$s jaoks puuduvad</string>
+    <string name="errorTtsLangNotAvailable">Kõnesüntesaatori failid keele \"%1$s\" jaoks puuduvad</string>
     <string name="errorTtsInitError">Kõnesüntesaatori alglaadimine luhtus</string>
     <string name="buttonMicrophoneContentDescription">@string/tvInstructions</string>
     <string name="iconContactContentDescription">Inimese pilt</string>
