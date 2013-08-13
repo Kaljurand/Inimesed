@@ -26,9 +26,9 @@
     <string name="menuMainSettings">Seaded</string>
     <string name="menuMainAbout">Abi</string>
     <string name="titleUseTts">Kinnita nimi</string>
-    <string name="summaryUseTts">Korda nime ennem käsu täideviimist (vajalik rakenduse uuesti käivitamine)</string>
+    <string name="summaryUseTts">Korda nime ennem käsu täideviimist</string>
     <string name="titleTtsLanguage">Kinnituse keel</string>
-    <string name="summaryTtsLanguage">Hääldus, mida kinnituses kasutatakse (vajalik rakenduse uuesti käivitamine)</string>
+    <string name="summaryTtsLanguage">Hääldus, mida kinnituses kasutatakse</string>
     <string name="titleShowHasPhoneNumber">Telefoniomanikud</string>
     <string name="summaryShowHasPhoneNumber">Näita ainult neid, kellel on vähemalt üks telefoninumber (vajalik rakenduse uuesti käivitamine)</string>
     <string name="titleSearchByNameParts">Paindlik otsing</string>

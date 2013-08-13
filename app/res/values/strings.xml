@@ -76,7 +76,7 @@
     <string name="fileAbout">file:///android_asset/about/en_US.html</string>
     <string name="error">ERROR: %1$s</string>
     <string name="errorActionNotSupported">ERROR: action not supported: %1$s</string>
-    <string name="errorTtsLangNotAvailable">TTS data for %1$s not available</string>
+    <string name="errorTtsLangNotAvailable">TTS data for \"%1$s\" not available</string>
     <string name="errorTtsInitError">TTS initialization failed</string>
     <string name="buttonMicrophoneContentDescription">@string/tvInstructions</string>
     <string name="iconContactContentDescription">Contact photo</string>
@@ -98,9 +98,9 @@
     <string name="menuMainSettings">Settings</string>
     <string name="menuMainAbout">About</string>
     <string name="titleUseTts">Confirm name by speech</string>
-    <string name="summaryUseTts">Speak the recognized name as feedback before executing the command (requires the app to be relaunched)</string>
+    <string name="summaryUseTts">Speak the recognized name as feedback before executing the command</string>
     <string name="titleTtsLanguage">Confirmation language</string>
-    <string name="summaryTtsLanguage">Language that is used for the synthesized confirmation (requires the app to be relaunched)</string>
+    <string name="summaryTtsLanguage">Language that is used for the synthesized confirmation</string>
     <string name="titleShowHasPhoneNumber">People with phone</string>
     <string name="summaryShowHasPhoneNumber">Show only contacts that have at least one phone number listed (requires the app to be relaunched)</string>
     <string name="titleSearchByNameParts">Flexible search</string>

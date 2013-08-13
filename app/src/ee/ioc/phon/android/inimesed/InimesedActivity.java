@@ -117,7 +117,6 @@ public class InimesedActivity extends Activity {
 
 	private ListView mLvContacts;
 
-	private static final int TTS_DATA_CHECK_CODE = 1;
 	private TextToSpeech mTts;
 
 	private String mCurrentSortOrder;
@@ -134,13 +133,6 @@ public class InimesedActivity extends Activity {
 
 		mRes = getResources();
 		mPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-
-		// TODO: this should be done also when TTS is switched on in the settings
-		if (isUseTts()) {
-			Intent checkIntent = new Intent();
-			checkIntent.setAction(TextToSpeech.Engine.ACTION_CHECK_TTS_DATA);
-			startActivityForResult(checkIntent, TTS_DATA_CHECK_CODE);
-		}
 
 		mSelection = "(" + ContactsContract.Contacts.IN_VISIBLE_GROUP + " = '1'" + ")";
 
@@ -178,6 +170,10 @@ public class InimesedActivity extends Activity {
 	@Override
 	public void onStart() {
 		super.onStart();
+		// Start TTS
+		if (isUseTts()) {
+			initTextToSpeech();
+		}
 		updateTitle();
 	}
 
@@ -185,6 +181,12 @@ public class InimesedActivity extends Activity {
 	@Override
 	public void onStop() {
 		super.onStop();
+
+		// Stop TTS
+		if (mTts != null) {
+			mTts.shutdown();
+		}
+
 		SharedPreferences.Editor editor = mPrefs.edit();
 		editor.putString(getString(R.string.prefCurrentSortOrder), mCurrentSortOrder);
 		editor.commit();
@@ -195,11 +197,6 @@ public class InimesedActivity extends Activity {
 	public void onDestroy() {
 		Log.i("onDestroy");
 		super.onDestroy();
-
-		// Stop TTS
-		if (mTts != null) {
-			mTts.shutdown();
-		}
 
 		// Close the contacts cursor
 		mCursor.close();
@@ -272,34 +269,24 @@ public class InimesedActivity extends Activity {
 	}
 
 
-	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-		if (requestCode == TTS_DATA_CHECK_CODE) {
-			if (resultCode == TextToSpeech.Engine.CHECK_VOICE_DATA_PASS) {
-				Log.i(LOG_TAG, "CHECK_VOICE_DATA_PASS");
-				mTts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-					@Override
-					public void onInit(int status) {
-						if (status == TextToSpeech.SUCCESS) {
-							String selectedLanguage = mPrefs.getString(getString(R.string.keyTtsLanguage), getString(R.string.defaultTtsLanguage));
-							boolean success = setTtsLang(selectedLanguage);
-							if (! success) {
-								// TODO: this message will not be shown very long,
-								// so the user will probably not notice it.
-								mTvInfo.setText(String.format(getString(R.string.errorTtsLangNotAvailable), selectedLanguage));
-							}
-						} else {
-							mTvInfo.setText(getString(R.string.errorTtsInitError));
-							Log.e(LOG_TAG, getString(R.string.errorTtsInitError));
-						}
+	private void initTextToSpeech() {
+		mTts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+			@Override
+			public void onInit(int status) {
+				if (status == TextToSpeech.SUCCESS) {
+					String selectedLanguage = mPrefs.getString(getString(R.string.keyTtsLanguage), getString(R.string.defaultTtsLanguage));
+					boolean success = setTtsLang(selectedLanguage);
+					if (! success) {
+						// TODO: this message will not be shown very long,
+						// so the user will probably not notice it.
+						mTvInfo.setText(String.format(getString(R.string.errorTtsLangNotAvailable), selectedLanguage));
 					}
-				});
-			} else {
-				Log.i(LOG_TAG, "Need to install TTS data");
-				Intent installIntent = new Intent();
-				installIntent.setAction(TextToSpeech.Engine.ACTION_INSTALL_TTS_DATA);
-				startActivity(installIntent);
+				} else {
+					mTvInfo.setText(getString(R.string.errorTtsInitError));
+					Log.e(LOG_TAG, getString(R.string.errorTtsInitError));
+				}
 			}
-		}
+		});
 	}
 
 
