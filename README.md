@@ -16,7 +16,7 @@ In order to successfully build:
 
   - PocketSphinx libraries must be installed
   - swig must be installed
-  - Android NDK must be installed (tested with: android-ndk-r8e)
+  - Android NDK must be installed (tested with: android-ndk-r9)
   - Android SDK must be installed
   - change `SPHINX_PATH` in `jni/Android.mk` to match your configuration
     - pocketsphinx (PocketSphinx 0.7 / PocketSphinx v0.5.99)
